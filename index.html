@@ -31,6 +31,22 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-M3NFCG2Q');</script>
     <!-- End Google Tag Manager -->
+
+
+    <!-- JavaScript code for tracking link clicks -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var trackableLinks = document.querySelectorAll('a[data-track-category][data-track-label]');
+            trackableLinks.forEach(function(link) {
+                link.addEventListener('click', function(event) {
+                    var category = this.getAttribute('data-track-category');
+                    var label = this.getAttribute('data-track-label');
+                    // Send event to Google Analytics
+                    ga('send', 'event', category, 'Click', label);
+                });
+            });
+        });
+    </script>
   </head>
   
   <!-- The body contains the content of the website. -->
@@ -50,20 +66,18 @@
       <div class="container">
         <div class="icons">
           
-          <!-- a href indicates a link (here, to your email address). -->
-          <a href="mailto:nitinmaul.nitty@gmail.com">
+          <a href="mailto:nitinmaul.nitty@gmail.com" data-track-category="Email" data-track-label="nitinmaul.nitty@gmail.com">
             <!-- This is the icon for email. Since it's surrounded by the 'a' tag, it links to your email address! -->
             <i class="fa fa-envelope" title="Email"></i>
           </a>
           
-          <a href="https://github.com/thenm">
+          <a href="https://github.com/thenm" data-track-category="GitHub" data-track-label="GitHub Profile">
             <i class="fa fa-github" title="Github"></i>
           </a>
           
-          <a href="https://www.linkedin.com/in/nitin-maul">
+          <a href="https://www.linkedin.com/in/nitin-maul" data-track-category="LinkedIn" data-track-label="LinkedIn Profile">
             <i class="fa fa-linkedin" title="LinkedIn"></i>
-          </a>
-    
+          </a>    
         </div>
       </div>
     </footer>
